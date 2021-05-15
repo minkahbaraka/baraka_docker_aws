@@ -13,7 +13,7 @@ The following instructions describe how to deploy an extended user authenticatio
 ### CloudFormation Stack
 1. Clone github repository to a new directory on local machine
 2. Create EC2 key pair in AWS management console and save to project folder directory
-3. Open ```healthverity_fullstack.yml``` and replace the ```MyKeyName``` parameter with your KeyPair (line 26)
+3. Open ```fullstack.yml``` and replace the ```MyKeyName``` parameter with your KeyPair (line 26)
 4. Run aws cloudformation command in ```proj_commands.sh```
 5. Once completed, open the ```Outputs``` tab on the CloudFormation page in AWS console. Save the access key id and secret access key in a text editor.
 6. Open RDS instance on console, save RDS endpoint address to text file.
