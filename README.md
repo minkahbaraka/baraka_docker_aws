@@ -1,4 +1,4 @@
-# HealthVerity AWS/Docker/Django Demo
+# AWS/Docker/Django Demo
 
 The following instructions describe how to deploy an extended user authentication Django web application using CloudFormation stack and docker-compose. 
 
