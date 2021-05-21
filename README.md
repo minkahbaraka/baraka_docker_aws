@@ -29,7 +29,7 @@ The following instructions describe how to deploy an extended user authenticatio
 ### Docker Image and Docker Hub
 1. Open ```proj_commands.sh``` and replace all instances of ```baraka215/docker-aws``` with ```yourdockerhubname/[yourprojectname]```
 2. Also, in ```proj_commands.sh``` replace DOCKER_HOST ip address with your EC2 ip address obtained from AWS console
-3. Open ```docker-compose.yml``` and replace ```baraka215/healthverity-django``` with ```yourdockerhubname/healthverity-django```
+3. Open ```docker-compose.yml``` and replace ```baraka215/docker-aws``` with ```yourdockerhubname/[yourprojectname]```
 3. Run docker build, docker image tag and docker image push commands
 
 ### Docker-Compose
