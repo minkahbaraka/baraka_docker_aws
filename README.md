@@ -1,6 +1,6 @@
 # AWS/Docker/Django Demo
 
-The following instructions describe how to deploy an extended user authentication Django web application using CloudFormation stack and docker-compose. 
+The following instructions describe how to deploy an extended user authentication Django web application using an AWS CloudFormation stack and docker-compose. 
 
 ## Overview
 - Create cloudformation stack
