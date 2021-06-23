@@ -19,11 +19,11 @@ Parameters:
 
   MyKeyName:
     Type: String
-    Default: healthverity-comp6905   #Enter your keypair here 
+    Default: baraka_docker_aws-comp6905   #Enter your keypair here 
 
 
 Resources:
-    healthverityInstance:
+    baraka_docker_awsInstance:
       Type: AWS::EC2::Instance
       Properties:
           AvailabilityZone: us-east-1a
@@ -31,7 +31,7 @@ Resources:
           InstanceType: !Ref InstanceType #References instancetype parameter
           KeyName: !Ref MyKeyName  #References keypair parameter
           SecurityGroups:
-            - !Ref healthveritySecurityGroup
+            - !Ref baraka_docker_awsSecurityGroup
           UserData: !Base64 |
             #!/bin/bash
             sudo apt-get update -qq
@@ -48,7 +48,7 @@ Resources:
             sudo systemctl daemon-reload
             sudo systemctl restart docker
 
-    healthveritySecurityGroup:
+    baraka_docker_awsSecurityGroup:
       Type: AWS::EC2::SecurityGroup
       Properties:
           GroupDescription: Enable http access via port 80, 22, 2375
@@ -70,13 +70,13 @@ Resources:
     MyElasticIP:
       Type: AWS::EC2::EIP
       Properties:
-        InstanceId: !Ref healthverityInstance
+        InstanceId: !Ref baraka_docker_awsInstance
 
 #Create postgres database instance and security group
     MyDBInstance:
       Type: AWS::RDS::DBInstance
       Properties:
-          DBName: healthverity_db
+          DBName: baraka_docker_aws_db
           Engine: postgres
           MasterUsername: postgres
           MasterUserPassword: postgres210
@@ -158,7 +158,7 @@ Resources:
         ImageId: ami-0ac019f4fcb7cb7e6  #same ubuntu ami as EC2
         KeyName: !Ref MyKeyName
         SecurityGroups:
-          - !Ref healthveritySecurityGroup
+          - !Ref baraka_docker_awsSecurityGroup
         InstanceType: !Ref InstanceType
         UserData: !Base64 |
           #!/bin/bash
@@ -180,7 +180,7 @@ Resources:
     S3Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: healthverity-static
+        BucketName: baraka_docker_aws-static
 
     BucketPolicy:
       Type: AWS::S3::BucketPolicy

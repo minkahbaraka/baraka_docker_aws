@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'healthverity_db',
+        'NAME': 'baraka_docker_aws_db',
         'USER': 'postgres',
         'PASSWORD': config('PG_password'),
         'HOST': config('RDS_host'),
@@ -109,12 +109,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 AWS_ACCESS_KEY_ID = config('aws_s3_access_key_id')
 AWS_SECRET_ACCESS_KEY = config('aws_s3_secret_access_key')
-AWS_STORAGE_BUCKET_NAME = 'healthverity-static'
-AWS_S3_CUSTOM_DOMAIN = 'healthverity-static.s3.amazonaws.com'
+AWS_STORAGE_BUCKET_NAME = 'baraka_docker_aws-static'
+AWS_S3_CUSTOM_DOMAIN = 'baraka_docker_aws-static.s3.amazonaws.com'
 AWS_S3_OBJECT_PARAMETERS = { 'CacheControl': 'max-age=86400',}
 AWS_LOCATION = ''
 AWS_DEFAULT_ACL= None
 
-STATIC_URL = 'https://healthverity-static.s3.amazonaws.com/'
+STATIC_URL = 'https://baraka_docker_aws-static.s3.amazonaws.com/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATIC_URL = '/static/'

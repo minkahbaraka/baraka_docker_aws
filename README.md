@@ -34,7 +34,7 @@ The following instructions describe how to deploy an extended user authenticatio
 
 ### Docker-Compose
 1. Run the remainder of docker-compose commands in ```proj_commands.sh```(enter yes when prompted during collectstatic)
-2. After ```docker-compose up -d``` is executed, go to EC2 public DNS address and healthverity website will be up and running.
+2. After ```docker-compose up -d``` is executed, go to EC2 public DNS address and baraka_docker_aws website will be up and running.
 3. Explore site: register new users, subscribe to plans, change passwords, edit user profiles, view home page and pricing plans
 4. To stop and remove containers, networks, volumes, and images created by up: ```docker-compose down -v --rmi all```
 
